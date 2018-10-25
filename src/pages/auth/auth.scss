@@ -1,0 +1,80 @@
+page-auth {
+    .scroll-content {
+        background-color: $black;
+        background-image: url('../assets/imgs/auth-bg.jpg');
+        background-position: center center;
+        background-size: cover;
+    }
+
+    .lifeproof {
+        color: $gray;
+        font-size: 26px;
+        margin-top: 5px;
+        font-weight: 300;
+        opacity: 0.7;
+    }
+
+    .overlay-bg {
+        // background-color: $black;
+        // opacity: 0.9;
+        // width: 100%;
+        // height: 100%;
+    }
+
+    .sectionTxt {
+        width: 100%;
+        text-align: center
+    }
+
+    .featuredtxt {
+        margin-top: 50px;
+        margin-bottom: 0px;
+        font-size: 20px;
+        color: $gray;
+        opacity: 0.7;
+    }
+
+    .visualSection {
+        margin-top: 20%;
+        width: 100%;
+        text-align: center
+    }
+
+    .btnChangeView {
+        margin-top: 40px;
+        text-align: center;
+        color: $gray
+    }
+
+    .customInput {
+        margin-top: 20px;
+        padding: 15px;
+        background: transparent;
+        border: 0.5px solid $gray;
+        border-radius: 5px;
+        width: 60%;
+        margin-left: 20%;
+        color: $gray;
+        font-size: 17px;
+    }
+
+    ::placeholder { 
+        color: $gray;
+        opacity: 0.7;
+        font-size: 17px; 
+    }
+
+    .btnCta {
+        margin-top: 20px;
+        padding: 15px;
+        background: $yellow;
+        // border: 0.5px solid $gray;
+        border-radius: 5px;
+        width: 60%;
+        margin-left: 20%;
+        color: $gray;
+        font-size: 20px;  
+        text-align: center;
+    }
+    
+}

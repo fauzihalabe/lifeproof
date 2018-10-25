@@ -1,0 +1,55 @@
+<ion-content>
+  <div class="overlay-bg" padding>
+
+    <!-- VISUAL -->
+    <div class="visualSection">
+      <img src="assets/imgs/mostard.png" style="width: 22%">
+
+      <p class="lifeproof">Lifeproof</p>
+    </div>
+
+
+    <!-- LOGIN -->
+    <div *ngIf="login">
+      <div class="sectionTxt">
+        <p class="featuredtxt">Fazer login</p>
+      </div>
+
+      <!-- FORM -->
+      <input [(ngModel)]="log.email" class="customInput" placeholder="email" type="email">
+      <input [(ngModel)]="log.senha" class="customInput" placeholder="senha" type="password">
+
+      <!-- CTA -->
+      <div class="btnCta" (click)="fazerLog()">
+        confirmar
+      </div>
+
+      <!-- BTN FAZER LOGIN -->
+      <div class="btnChangeView" (click)="changeView()">
+        Criar um conta
+      </div>
+    </div>
+
+    <!-- REGISTRO -->
+    <div *ngIf="!login">
+      <div class="sectionTxt">
+        <p class="featuredtxt">Fazer cadastro</p>
+      </div>
+
+      <!-- FORM -->
+      <input [(ngModel)]="registro.nome" class="customInput" placeholder="nome">
+      <input [(ngModel)]="registro.email" class="customInput" placeholder="email" type="email">
+      <input [(ngModel)]="registro.senha" class="customInput" placeholder="senha" type="password">
+
+      <!-- CTA -->
+      <div class="btnCta" (click)="cadastrar()">
+        confirmar
+      </div>
+
+      <!-- BTN FAZER LOGIN -->
+      <div class="btnChangeView" (click)="changeView()">
+        Já tenho uma conta
+      </div>
+    </div>
+  </div>
+</ion-content>

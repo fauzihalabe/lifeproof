@@ -3,16 +3,42 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>Enviar</ion-title>
   </ion-navbar>
 </ion-header>
 
+
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <div *ngIf="!uploaded" style="text-align: center; margin-top: 150px">
+    <button ion-button secondary (click)="upload()">Enviar arquivo</button>
+  </div>
 
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
+  <div *ngIf="uploaded">
+    <!-- IMG -->
+    <div *ngIf="type === 'photo'">
+      <img style="width: 60%; margin-left: 20%; margin-top: 40px" [src]="img">
+    </div>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+    <!-- VIDEO -->
+    <div *ngIf="type === 'video'">
+      <video style="width: 60%; margin-left: 20%; margin-top: 40px" controls controlsList="nodownload">
+        <source [src]="img" type="video/mp4">
+      </video>
+      <!-- <video style="width: 60%; margin-left: 20%; margin-top: 40px" [src]="img"></video> -->
+    </div>
+
+    <!-- CODE -->
+    <div class="code">
+      {{code}}
+    </div>
+
+    <!-- CTA -->
+    <div class="btnCta" (click)="share()">
+      compartilhar código
+    </div>
+
+    <div class="voltar" (click)="fechar()">
+      <p>Fechar</p>
+    </div>
+  </div>
 </ion-content>

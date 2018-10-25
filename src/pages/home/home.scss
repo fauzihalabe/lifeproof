@@ -1,3 +1,38 @@
 page-home {
+    .scroll-content {
+        background-color: $black;
+    }
 
+    .code {
+        margin-top: 60px;
+        width: 60%;
+        margin-left: 20%;
+        padding: 10px;
+        border: 1px solid $gray;
+        border-radius: 100px;
+        text-align: center;
+        color: $gray;
+        font-size: 18px;
+        text-transform: uppercase
+    }
+
+    .btnCta {
+        margin-top: 20px;
+        padding: 15px;
+        background: $yellow;
+        // border: 0.5px solid $gray;
+        border-radius: 5px;
+        width: 60%;
+        margin-left: 20%;
+        color: $gray;
+        font-size: 20px;  
+        text-align: center;
+    }
+
+    .voltar {
+        margin-top: 60px;
+        width: 100%;
+        text-align: center;
+        color: $gray;
+    }
 }

@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Visualizar</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div *ngIf="!have">
+    <input [(ngModel)]="code" class="customInput" placeholder="insira o código">
+
+    <!-- CTA -->
+    <div class="btnCta" (click)="confirm()">
+      confirmar
+    </div>
+  </div>
+
+  <div *ngIf="have && proof.type === 'photo'">
+    <img [src]="proof.file" style="width: 100%; margin-top: 40px">
+    <p class="lifeproof2">Lifeproof <br> {{proof.createdAt | amDateFormat:'DD/MM/YYYY' }}</p>
+  </div>
+
+  <div *ngIf="have && proof.type === 'video'" >
+    <!-- <img [src]="proof.file" style="width: 100%; margin-top: 40px"> -->
+    <video style="width: 100%; margin-top: 40px; z-index: 100;" controls controlsList="nodownload" (ended)="vidEnded()" autoplay>
+      <source [src]="proof.file" type="video/mp4">
+    </video>
+    <p class="lifeproof">Lifeproof <br> {{proof.createdAt | amDateFormat:'DD/MM/YYYY' }}</p>
+  </div>
+
+</ion-content>

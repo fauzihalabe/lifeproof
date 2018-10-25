@@ -3,21 +3,19 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>List</ion-title>
+    <ion-title>Meus envios</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
   <ion-list>
-    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">
-      <ion-icon [name]="item.icon" item-start></ion-icon>
-      {{item.title}}
-      <div class="item-note" item-end>
-        {{item.note}}
-      </div>
-    </button>
+    <ion-item *ngFor="let i of items">
+      <ion-avatar item-start>
+        <img [src]="i.file" *ngIf="i.type === 'photo'">
+        <img src="assets/imgs/logo-lf.jpg" *ngIf="i.type === 'video'">
+      </ion-avatar>
+      <h2 style="text-transform: uppercase">{{i.code}}</h2>
+      <p><ion-icon name="ios-eye"></ion-icon> <span style="margin-left: 8x">{{i.openedBy.length}}</span></p>
+    </ion-item>
   </ion-list>
-  <div *ngIf="selectedItem" padding>
-    You navigated here from <b>{{selectedItem.title}}</b>
-  </div>
 </ion-content>
